@@ -4,7 +4,7 @@ import { OfertasComponent } from './paginas/ofertas/ofertas.component';
 import { ContactoComponent } from './paginas/contacto/contacto.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { CarritoComponent } from './compartidos/carrito/carrito.component';
-import { FavoritosComponent } from './compartidos/favoritos/favoritos.component';
+import { NosotrosComponent } from'./paginas/nosotros/nosotros.component'; 
 import { CompraComponent } from './paginas/compra/compra.component';
 import { InicioSesionComponent } from './auth/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './auth/registro/registro.component';
@@ -15,24 +15,13 @@ import { TicketComponent } from './paginas/ticket/ticket.component';
 
 export const routes: Routes = [
 
-  // -----------------------------------------------------------
-  // Página de inicio
-  // -----------------------------------------------------------
+
   { path: 'inicio', component: InicioComponent },
 
-  // -----------------------------------------------------------
-  // Página de productos (pública)
-  // -----------------------------------------------------------
   { path: 'productos', component: ProductosComponent },
 
-  // -----------------------------------------------------------
-  // Página de ofertas (pública)
-  // -----------------------------------------------------------
   { path: 'ofertas', component: OfertasComponent },
 
-  // -----------------------------------------------------------
-  // Página institucional de contacto
-  // -----------------------------------------------------------
   { path: 'contacto', component: ContactoComponent },
 
   // -----------------------------------------------------------
@@ -42,29 +31,18 @@ export const routes: Routes = [
   // -----------------------------------------------------------
   { path: 'carrito', component: CarritoComponent },
 
-  // -----------------------------------------------------------
-  // Página de favoritos del usuario
-  // -----------------------------------------------------------
-  { path: 'favorito', component: FavoritosComponent },
+  { path: 'nosotros', component: NosotrosComponent },
 
-  // -----------------------------------------------------------
-  // Página de compra: resumen y confirmación de pedido
-  // -----------------------------------------------------------
+
   { path: 'compra', component: CompraComponent },
 
-  // -----------------------------------------------------------
-  // Auth: inicio de sesión
-  // -----------------------------------------------------------
+
   { path: 'login', component: InicioSesionComponent },
 
-  // -----------------------------------------------------------
-  // Auth: registro de usuario
-  // -----------------------------------------------------------
+
   { path: 'register', component: RegistroComponent },
 
-  // -----------------------------------------------------------
-  // Historial de compras del usuario
-  // -----------------------------------------------------------
+
   { path: 'compras', component: ComprasComponent },
 
   // -----------------------------------------------------------

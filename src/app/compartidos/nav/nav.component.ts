@@ -17,8 +17,7 @@ export class NavComponent implements OnInit {
   // Se calcula dinámicamente sumando las cantidades de los ítems.
   cantidadProductos: number = 0;
 
-  // Estado del modo oscuro, sincronizado con localStorage.
-  modoOscuroActivado = false;
+
 
   // Información del usuario actualmente autenticado.
   usuario: any = null;
@@ -63,30 +62,19 @@ export class NavComponent implements OnInit {
         this.carritoService.cargarCarrito();
       });
     }
-
-    // Recupera el estado del modo oscuro desde localStorage.
-    this.modoOscuroActivado = localStorage.getItem('modoOscuro') === 'true';
-
-    // Aplica la clase correspondiente al <body>.
-    this.aplicarModoOscuro();
-  }
-
-  // Activa o desactiva el modo oscuro y lo guarda en localStorage.
-  alternarModoOscuro() {
-    this.modoOscuroActivado = !this.modoOscuroActivado;
-    localStorage.setItem('modoOscuro', String(this.modoOscuroActivado));
-    this.aplicarModoOscuro();
-  }
-
-  // Agrega o quita la clase "dark-mode" al body según el estado actual.
-  private aplicarModoOscuro() {
-    document.body.classList.toggle('dark-mode', this.modoOscuroActivado);
   }
 
   // Cierra sesión, limpia usuario y cantidad mostrada en el carrito.
   logout() {
-    this.authService.logout();
-    this.usuario = null;
-    this.cantidadProductos = 0;
-  }
+  const confirmar = confirm("¿Seguro que querés cerrar sesión?");
+  if (!confirmar) return;
+
+  this.authService.logout();
+  this.usuario = null;
+  this.cantidadProductos = 0;
+
+  // Refresca la vista del navbar
+  window.location.reload();
+}
+
 }

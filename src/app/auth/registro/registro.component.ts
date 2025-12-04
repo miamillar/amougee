@@ -13,6 +13,7 @@ import { AuthService } from '../../servicios/auth.service';
 })
 export class RegistroComponent {
 
+  
   // Objeto que contiene los datos del nuevo usuario.
   // Se enlaza al formulario mediante ngModel en la plantilla.
   nuevoUsuario = {

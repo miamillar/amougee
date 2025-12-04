@@ -2,6 +2,7 @@
   <h2 class="text-center mb-4 fw-bold">Iniciar Sesión</h2>
 
   <form (ngSubmit)="iniciarSesion()">
+
     <!-- Correo electrónico -->
     <div class="mb-3">
       <label for="email" class="form-label">Correo electrónico</label>
@@ -11,6 +12,7 @@
         name="email"
         class="form-control"
         [(ngModel)]="usuario.email"
+        [ngModelOptions]="{standalone: true}"
         required
       />
     </div>
@@ -24,6 +26,7 @@
         name="password"
         class="form-control"
         [(ngModel)]="usuario.password"
+        [ngModelOptions]="{standalone: true}"
         required
       />
     </div>
@@ -37,6 +40,7 @@
     <p *ngIf="error" class="text-danger text-center mt-3">
       {{ error }}
     </p>
+
   </form>
 
   <!-- Enlace al registro -->
@@ -45,5 +49,5 @@
       ¿No tenés cuenta?
       <a routerLink="/registro">Registrate aquí</a>
     </small>
-  </div>
+</div>
 </div>
