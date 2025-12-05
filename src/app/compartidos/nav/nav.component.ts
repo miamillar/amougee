@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLinkActive, RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { CarritoService } from '../../servicios/carrito.service';
 import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterLinkActive],
+  imports: [CommonModule, RouterModule, RouterLinkActive, RouterLink],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })

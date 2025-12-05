@@ -42,11 +42,11 @@
           <a routerLink="/compras" routerLinkActive="active" class="nav-link">Compras</a>
         </li>
 
-        <li class="nav-item" *ngIf="usuario?.rol === 'admin'">
+        <!--<li class="nav-item" *ngIf="usuario?.rol === 'admin'">
           <a routerLink="/admin" routerLinkActive="active" class="nav-link text-warning fw-bold">Admin</a>
         </li>
 
-      </ul>
+      </ul>-->
 
       <!-- DERECHA -->
       <div class="d-flex align-items-center">
@@ -59,6 +59,12 @@
 
         <!-- SI ESTÁ LOGUEADO -->
         <ng-container *ngIf="authService.isLoggedIn(); else sinSesion">
+          <a
+          class="btn"
+          *ngIf="usuario?.rol === 'admin'"
+          routerLink="/admin"
+          routerLinkActive="active"
+          >Admin</a>
           <span class="user-label me-3">
             {{ usuario?.nombre }} ({{ usuario?.rol }})
           </span>
