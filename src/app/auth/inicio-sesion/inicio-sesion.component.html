@@ -1,53 +1,63 @@
-<div class="container mt-5" style="max-width: 420px;">
-  <h2 class="text-center mb-4 fw-bold">Iniciar Sesión</h2>
+<div style="display: flex; justify-content: center; margin-top: 40px;">
+  <form class="form" (ngSubmit)="iniciarSesion()">
 
-  <form (ngSubmit)="iniciarSesion()">
+    <p id="heading">Iniciar Sesión</p>
 
-    <!-- Correo electrónico -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Correo electrónico</label>
+    <!-- Email -->
+    <div class="field">
+      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        fill="currentColor" viewBox="0 0 16 16">
+        <path
+          d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm13.5-.5L8 8 2.5 3.5h11z" />
+      </svg>
+
       <input
         type="email"
-        id="email"
+        placeholder="Correo electrónico"
+        class="input-field"
         name="email"
-        class="form-control"
         [(ngModel)]="usuario.email"
         [ngModelOptions]="{standalone: true}"
         required
       />
     </div>
 
-    <!-- Contraseña -->
-    <div class="mb-3">
-      <label for="password" class="form-label">Contraseña</label>
+    <!-- Password -->
+    <div class="field">
+      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        fill="currentColor" viewBox="0 0 16 16">
+        <path
+          d="M8 1a2 2 0 012 2v4H6V3a2 2 0 012-2zm3 6V3a3 3 0 00-6 0v4a2 2 0 00-2 2v5a2 2 0 002 2h6a2 2 0 002-2V9a2 2 0 00-2-2z" />
+      </svg>
+
       <input
         type="password"
-        id="password"
+        placeholder="Contraseña"
+        class="input-field"
         name="password"
-        class="form-control"
         [(ngModel)]="usuario.password"
         [ngModelOptions]="{standalone: true}"
         required
       />
     </div>
 
-    <!-- Botón de envío -->
-    <div class="d-grid">
-      <button type="submit" class="btn btn-primary">Ingresar</button>
+    <!-- Botón iniciar -->
+    <div class="btn">
+      <button type="submit" class="button1">Ingresar</button>
     </div>
 
     <!-- Mensaje de error -->
-    <p *ngIf="error" class="text-danger text-center mt-3">
+    <p
+      *ngIf="error"
+      style="color: #ff6b6b; text-align: center; margin-top: 10px;"
+    >
       {{ error }}
     </p>
 
-  </form>
+    <!-- Ir al registro -->
+    <button class="button3" routerLink="/registro">
+      ¿No tenés cuenta? Registrate
+    </button>
 
-  <!-- Enlace al registro -->
-  <div class="text-center mt-3">
-    <small>
-      ¿No tenés cuenta?
-      <a routerLink="/registro">Registrate aquí</a>
-    </small>
-</div>
+  </form>
 </div>

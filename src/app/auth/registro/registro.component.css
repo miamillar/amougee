@@ -11,24 +11,20 @@
   color: #483528;
 }
 
-/*FORMULARIO*/
+/* From Uiverse.io by Praashoo7 */ 
 .form {
+  width: 350px;
+  margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
-  width: 400px; /* tamaño pequeño */
-  margin: 0 auto;
   flex-direction: column;
-  gap: 5px;/*separacion de labels*/
+  gap: 10px;
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 0.4em;
   background-color: #171717;
   border-radius: 25px;
-  transition: .4s ease-in-out;/*movimiento fluido*/
+  transition: .4s ease-in-out;
 }
-
 
 .form:hover {
   transform: scale(1.05);

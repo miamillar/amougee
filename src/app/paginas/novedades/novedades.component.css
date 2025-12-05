@@ -1,0 +1,23 @@
+.fondo {
+    background-color: #f7ebdd;
+}
+
+.header {
+    text-align: center;
+    padding: 1px 0 20px;
+    font-size: 40px;
+    letter-spacing: 0.5 px;
+    font-family: 'Playfair Display', serif;
+    color: #483528;
+}
+
+.imagen {
+  width: 80%;
+  height: 100%;    
+  object-fit: cover; 
+  display: block;  /*sin esto no funciona el margin*/
+  margin: 25px auto;  /* separa la imagen del título o bordes */
+  
+}
+
+ 

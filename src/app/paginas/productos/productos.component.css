@@ -1,3 +1,16 @@
+.fondo {
+  background-color: #f7ebdd;
+}
+
+header {
+  text-align: center;
+  padding: 1px 0 20px;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+  color: #483528;
+}
+
 .productos-container {
   text-align: center;
   padding: 20px;

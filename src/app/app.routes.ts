@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
 import { InicioComponent } from './paginas/inicio/inicio.component';
-import { OfertasComponent } from './paginas/ofertas/ofertas.component';
 import { ContactoComponent } from './paginas/contacto/contacto.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { CarritoComponent } from './compartidos/carrito/carrito.component';
-import { NosotrosComponent } from'./paginas/nosotros/nosotros.component'; 
+import { NosotrosComponent } from './paginas/nosotros/nosotros.component';
 import { CompraComponent } from './paginas/compra/compra.component';
 import { InicioSesionComponent } from './auth/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './auth/registro/registro.component';
@@ -12,6 +11,7 @@ import { AdminGuard } from './guards/admin.guard'; // importa el guard
 import { AdminComponent } from './paginas/admin/admin.component';
 import { ComprasComponent } from './paginas/compras/compras.component';
 import { TicketComponent } from './paginas/ticket/ticket.component';
+import { NovedadesComponent } from './paginas/novedades/novedades.component';
 
 export const routes: Routes = [
 
@@ -20,7 +20,7 @@ export const routes: Routes = [
 
   { path: 'productos', component: ProductosComponent },
 
-  { path: 'ofertas', component: OfertasComponent },
+  { path: 'novedades', component: NovedadesComponent },
 
   { path: 'contacto', component: ContactoComponent },
 
@@ -55,7 +55,7 @@ export const routes: Routes = [
     path: 'ticket/:id',
     loadComponent: () =>
       import('./paginas/ticket/ticket.component')
-      .then(m => m.TicketComponent)
+        .then(m => m.TicketComponent)
   },
 
   // -----------------------------------------------------------
@@ -64,7 +64,7 @@ export const routes: Routes = [
   // puede acceder.
   // Si no es admin, se redirige a /inicio-sesion (login)
   // -----------------------------------------------------------
-  { 
+  {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AdminGuard]

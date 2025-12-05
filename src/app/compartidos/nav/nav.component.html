@@ -27,7 +27,7 @@
         </li>
 
         <li class="nav-item">
-          <a routerLink="/ofertas" routerLinkActive="active" class="nav-link">Novedades</a>
+          <a routerLink="/novedades" routerLinkActive="active" class="nav-link">Novedades</a>
         </li>
 
         <li class="nav-item">
@@ -38,15 +38,9 @@
           <a routerLink="/contacto" routerLinkActive="active" class="nav-link">Contacto</a>
         </li>
 
-        <li class="nav-item">
-          <a routerLink="/compras" routerLinkActive="active" class="nav-link">Compras</a>
-        </li>
+      </ul>
 
-        <!--<li class="nav-item" *ngIf="usuario?.rol === 'admin'">
-          <a routerLink="/admin" routerLinkActive="active" class="nav-link text-warning fw-bold">Admin</a>
-        </li>
 
-      </ul>-->
 
       <!-- DERECHA -->
       <div class="d-flex align-items-center">
@@ -59,14 +53,8 @@
 
         <!-- SI ESTÁ LOGUEADO -->
         <ng-container *ngIf="authService.isLoggedIn(); else sinSesion">
-          <a
-          class="btn"
-          *ngIf="usuario?.rol === 'admin'"
-          routerLink="/admin"
-          routerLinkActive="active"
-          >Admin</a>
+          <a class="btn" *ngIf="usuario?.rol === 'admin'" routerLink="/admin" routerLinkActive="active">Admin</a>
           <span class="user-label me-3">
-            {{ usuario?.nombre }} ({{ usuario?.rol }})
           </span>
 
           <button class="btn btn-sm btn-logout" (click)="logout()">
@@ -78,7 +66,7 @@
         <ng-template #sinSesion>
           <a routerLink="/login" class="btn btn-sm btn-outline-dark me-2">Iniciar sesión</a>
 
-         <!-- BOTON REGISTRO DE USUARIO-->
+          <!-- BOTON REGISTRO DE USUARIO-->
           <button routerLink="/register" class="neu-button">
             <i class="bi bi-person-circle"></i>
           </button>
